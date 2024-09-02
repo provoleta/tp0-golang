@@ -27,15 +27,19 @@ func main() {
 
 	// ======= leemos consola
 
-	utils.LeerConsola() // (TOMI) lee la consola (en principio, una sola vez)
+	// utils.LeerConsola() // (TOMI) lee la consola (en principio, una sola vez)
 
 	// ======= ADVERTENCIA: Antes de continuar, tenemos que asegurarnos que el servidor esté corriendo para poder conectarnos a él
 
-	// enviar un mensaje al servidor con el valor de la config
+	// ======= enviar un mensaje al servidor con el valor de la config
 
-	// leer de la consola el mensaje
-	// utils.LeerConsola()
+	utils.EnviarMensaje(globals.ClientConfig.Ip, globals.ClientConfig.Puerto, globals.ClientConfig.Mensaje)
 
-	// generamos un paquete y lo enviamos al servidor
-	// utils.GenerarYEnviarPaquete()
+	// ======= leer de la consola el mensaje
+
+	utils.LeerConsola()
+
+	// ======= generamos un paquete y lo enviamos al servidor
+
+	utils.GenerarYEnviarPaquete()
 }
