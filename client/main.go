@@ -41,5 +41,5 @@ func main() {
 
 	// ======= generamos un paquete y lo enviamos al servidor
 
-	utils.GenerarYEnviarPaquete()
+	utils.GenerarYEnviarPaquete2()
 }

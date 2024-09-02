@@ -65,6 +65,26 @@ func GenerarYEnviarPaquete() {
 	EnviarPaquete(globals.ClientConfig.Ip, globals.ClientConfig.Puerto, paquete)
 }
 
+func GenerarYEnviarPaquete2() { // Envia las lineas por separado
+
+	// Leemos y cargamos el paquete
+	var text string
+	log.Println("Ingrese los mensajes a enviar")
+	for text != "\n" {
+		// paquete := Paquete{}
+		reader := bufio.NewReader(os.Stdin)
+		text, _ = reader.ReadString('\n')
+		log.Print(text)
+		last := len(text) - 1
+		// paquete.Valores = append(paquete.Valores, text[:last])
+		EnviarMensaje(globals.ClientConfig.Ip, globals.ClientConfig.Puerto, text[:last])
+	}
+	// log.Printf("Paquete a enviar: %+v", paquete)
+
+	// Enviamos el paquete
+
+}
+
 func EnviarMensaje(ip string, puerto int, mensajeTxt string) {
 	mensaje := Mensaje{Mensaje: mensajeTxt}
 	body, err := json.Marshal(mensaje)

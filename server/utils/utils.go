@@ -44,7 +44,7 @@ func RecibirMensaje(w http.ResponseWriter, r *http.Request) {
 	}
 
 	log.Println("Me llego un mensaje de un cliente")
-	log.Printf("%+v\n", mensaje)
+	log.Printf("%+v\n", mensaje) // log.Println(mensaje.Mensaje) para verlo fachero
 
 	w.WriteHeader(http.StatusOK) // (TOMI) manda un 200 porque si
 	w.Write([]byte("ok"))
